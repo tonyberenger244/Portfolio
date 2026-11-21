@@ -1,11 +1,803 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Votre Nom — Développeur MEARN &amp; Mobile (Flutter / React Native)</title>
+  <meta name="description" content="Portfolio de Votre Nom, développeur MEARN Stack et développeur mobile Flutter / React Native. Applications web et mobiles sur mesure, de la maquette au déploiement.">
+  <meta name="author" content="Votre Nom">
+  <meta name="theme-color" content="#070a12">
+
+  <!-- Open Graph / réseaux sociaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Votre Nom — Développeur MEARN &amp; Mobile">
+  <meta property="og:description" content="Applications web et mobiles sur mesure : MEARN Stack, Flutter et React Native.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portfolio de Votre Nom, développeur MEARN et mobile">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    // Applique le thème avant le rendu pour éviter un flash, et signale que JS est actif.
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* stockage indisponible */ }
+    })();
+  </script>
 </head>
+
 <body>
-    
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header__inner">
+      <a href="#top" class="brand" aria-label="Retour en haut de la page">
+        <span class="brand__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="brand__text">Berenger&nbsp;Tony</span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#apropos">À propos</a></li>
+          <li><a class="nav__link" href="#competences">Compétences</a></li>
+          <li><a class="nav__link" href="#projets">Projets</a></li>
+          <li><a class="nav__link" href="#parcours">Parcours</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Activer le thème clair" aria-pressed="false">
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn--primary btn--sm header__cta">Me contacter</a>
+
+        <button type="button" class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="pill">
+            <span class="pill__dot" aria-hidden="true"></span>
+            Disponible pour de nouveaux projets
+          </p>
+
+          <h1 class="hero__title">
+            Salut, je suis <span class="text-gradient">Votre&nbsp;Nom</span><span class="hero__dot">.</span>
+          </h1>
+
+          <p class="hero__roles">
+            <span class="hero__roles-static">Je conçois</span>
+            <span class="typed-wrap">
+              <span class="typed" id="typed" aria-hidden="true">des apps mobiles Flutter.</span><span class="typed__caret" aria-hidden="true"></span>
+            </span>
+            <span class="visually-hidden">des applications web MEARN, des applications mobiles Flutter et React Native.</span>
+          </p>
+
+          <p class="hero__lead">
+            Développeur <strong>MEARN Stack</strong> et mobile, je transforme des idées en produits
+            rapides, élégants et pensés pour durer — de la première maquette au déploiement
+            en production.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#projets" class="btn btn--primary">
+              Voir mes projets
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="assets/CV.pdf" class="btn btn--ghost" download>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Télécharger mon CV
+            </a>
+          </div>
+
+          <ul class="socials" aria-label="Réseaux et contact">
+            <li>
+              <a class="social-link" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21H9V9Z" fill="currentColor"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.7 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.7 3Zm-1.1 16.1h1.7L6.9 4.8H5.1l11.5 14.3Z" fill="currentColor"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="social-link" href="mailto:contact@votrenom.dev" aria-label="Envoyer un e-mail">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <div class="hero__ring" aria-hidden="true"></div>
+
+          <figure class="hero__photo" id="hero-photo">
+            <img src="assets/photo.svg" alt="Portrait de Votre Nom" width="560" height="700" fetchpriority="high">
+          </figure>
+
+          <div class="float-card float-card--exp">
+            <span class="float-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V7l-8-4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.8 12 2.3 2.3 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="float-card__text">
+              <strong>5+ ans</strong>
+              <small>d'expérience</small>
+            </span>
+          </div>
+
+          <div class="float-card float-card--stack">
+            <span class="float-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.5 5.6h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="18.2" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="float-card__text">
+              <strong>Web &amp; Mobile</strong>
+              <small>Flutter · React Native</small>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeau technologies -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__item">MongoDB</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Express</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Angular</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">React</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Node.js</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Flutter</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">React Native</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">TypeScript</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Firebase</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Docker</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">MongoDB</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Express</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Angular</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">React</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Node.js</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Flutter</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">React Native</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">TypeScript</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Firebase</span><span class="marquee__sep">◆</span>
+          <span class="marquee__item">Docker</span><span class="marquee__sep">◆</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= À PROPOS ================= -->
+    <section class="section" id="apropos">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow"><span></span>À propos</p>
+          <h2 class="section__title">Du code qui sert <span class="text-gradient">vos objectifs</span></h2>
+        </div>
+
+        <div class="about">
+          <div class="about__text" data-reveal>
+            <p>
+              Développeur passionné depuis plus de <strong>5 ans</strong>, j'accompagne startups,
+              agences et entreprises dans la création de produits numériques qui fonctionnent
+              vraiment : une expérience fluide pour l'utilisateur, une base de code propre pour
+              l'équipe et des performances au rendez-vous.
+            </p>
+            <p>
+              Côté web, je travaille avec l'écosystème <strong>MEARN</strong> — MongoDB, Express,
+              Angular, React et Node.js — pour construire des plateformes robustes et évolutives.
+              Côté mobile, je développe avec <strong>Flutter</strong> (Dart) et
+              <strong>React Native</strong> pour livrer des applications iOS et Android à partir
+              d'une base de code unique.
+            </p>
+            <p>
+              J'aime les interfaces soignées, les détails qui font la différence et le travail en
+              équipe avec les designers et les porteurs de projet.
+            </p>
+
+            <div class="about__chips" aria-label="Technologies principales">
+              <span class="chip">MEARN</span>
+              <span class="chip">Flutter</span>
+              <span class="chip">React Native</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">API REST</span>
+              <span class="chip">Firebase</span>
+            </div>
+
+            <a href="#contact" class="link-arrow">
+              Discutons de votre projet
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="stats" data-reveal>
+            <article class="stat">
+              <span class="stat__value"><span data-count="5">5</span><span class="stat__suffix">+</span></span>
+              <span class="stat__label">années d'expérience</span>
+            </article>
+            <article class="stat">
+              <span class="stat__value"><span data-count="30">30</span><span class="stat__suffix">+</span></span>
+              <span class="stat__label">projets livrés</span>
+            </article>
+            <article class="stat">
+              <span class="stat__value"><span data-count="12">12</span><span class="stat__suffix">+</span></span>
+              <span class="stat__label">clients accompagnés</span>
+            </article>
+            <article class="stat">
+              <span class="stat__value"><span data-count="3">3</span><span class="stat__suffix"></span></span>
+              <span class="stat__label">plateformes : web, iOS, Android</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPÉTENCES ================= -->
+    <section class="section section--alt" id="competences">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow"><span></span>Compétences</p>
+          <h2 class="section__title">Ma boîte à <span class="text-gradient">outils</span></h2>
+          <p class="section__sub">
+            Les technologies que j'utilise au quotidien, du frontend au déploiement.
+          </p>
+        </div>
+
+        <div class="skills">
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 5h18M3 12h18M3 19h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="5" r="2.2" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/><circle cx="10" cy="19" r="2.2" fill="currentColor"/></svg>
+              </span>
+              <h3>Frontend</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill">
+                <div class="skill__head"><span>React / Next.js</span><span class="skill__level">95%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="React et Next.js" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"><span style="--level:95%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>Angular</span><span class="skill__level">85%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Angular" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span style="--level:85%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>JavaScript / TypeScript</span><span class="skill__level">92%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="JavaScript et TypeScript" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"><span style="--level:92%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>HTML / CSS / Tailwind</span><span class="skill__level">90%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="HTML, CSS et Tailwind" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span style="--level:90%"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-card" data-reveal style="--reveal-delay:90ms">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12v7c0 1.7 3.1 3 7 3s7-1.3 7-3v-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              </span>
+              <h3>Backend</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill">
+                <div class="skill__head"><span>Node.js / Express</span><span class="skill__level">92%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Node.js et Express" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"><span style="--level:92%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>MongoDB / Mongoose</span><span class="skill__level">90%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="MongoDB et Mongoose" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span style="--level:90%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>API REST / GraphQL</span><span class="skill__level">85%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="API REST et GraphQL" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span style="--level:85%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>MySQL / PostgreSQL</span><span class="skill__level">78%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="MySQL et PostgreSQL" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"><span style="--level:78%"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-card" data-reveal style="--reveal-delay:180ms">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 5.6h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="18.2" r="1" fill="currentColor"/></svg>
+              </span>
+              <h3>Mobile</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill">
+                <div class="skill__head"><span>Flutter / Dart</span><span class="skill__level">90%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Flutter et Dart" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span style="--level:90%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>React Native</span><span class="skill__level">90%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="React Native" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span style="--level:90%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>Firebase</span><span class="skill__level">85%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Firebase" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span style="--level:85%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>App Store / Play Store</span><span class="skill__level">80%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Publication sur l'App Store et le Play Store" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span style="--level:80%"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-card" data-reveal style="--reveal-delay:270ms">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m14.5 6.5 3-3 3 3-3 3M9.5 17.5l-3 3-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="m8 16 8-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-opacity=".35"/></svg>
+              </span>
+              <h3>Outils &amp; DevOps</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill">
+                <div class="skill__head"><span>Git / GitHub</span><span class="skill__level">92%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Git et GitHub" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"><span style="--level:92%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>Docker</span><span class="skill__level">75%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Docker" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span style="--level:75%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>CI / CD</span><span class="skill__level">78%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Intégration et déploiement continus" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"><span style="--level:78%"></span></div>
+              </li>
+              <li class="skill">
+                <div class="skill__head"><span>Figma</span><span class="skill__level">80%</span></div>
+                <div class="skill__bar" role="progressbar" aria-label="Figma" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span style="--level:80%"></span></div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETS ================= -->
+    <section class="section" id="projets">
+      <div class="container">
+        <div class="section__head section__head--split" data-reveal>
+          <div>
+            <p class="eyebrow"><span></span>Réalisations</p>
+            <h2 class="section__title">Quelques <span class="text-gradient">projets</span></h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrer les projets">
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Tous</button>
+            <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
+            <button type="button" class="filter" data-filter="mobile" aria-pressed="false">Mobile</button>
+          </div>
+        </div>
+
+        <div class="projects" id="projects-grid">
+          <!-- Projet 1 -->
+          <article class="project" data-category="web" data-reveal>
+            <div class="project__media">
+              <img src="assets/project-novashop.svg" alt="Aperçu de l'interface NovaShop, boutique en ligne" width="800" height="600" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <a href="#" class="btn btn--sm btn--primary" data-placeholder>Voir le site</a>
+                <a href="#" class="icon-btn" aria-label="Code source de NovaShop" data-placeholder>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3 class="project__title">NovaShop</h3>
+                <span class="project__year">2025</span>
+              </div>
+              <p class="project__desc">
+                Plateforme e-commerce complète : catalogue, panier, paiement Stripe,
+                back-office de gestion et suivi des commandes en temps réel.
+              </p>
+              <ul class="tags">
+                <li>MongoDB</li><li>Express</li><li>React</li><li>Node.js</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Projet 2 -->
+          <article class="project" data-category="mobile" data-reveal style="--reveal-delay:90ms">
+            <div class="project__media">
+              <img src="assets/project-payflow.svg" alt="Aperçu de l'application PayFlow sur mobile" width="800" height="600" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <a href="#" class="btn btn--sm btn--primary" data-placeholder>Voir l'app</a>
+                <a href="#" class="icon-btn" aria-label="Code source de PayFlow" data-placeholder>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3 class="project__title">PayFlow</h3>
+                <span class="project__year">2025</span>
+              </div>
+              <p class="project__desc">
+                Application de paiement mobile : wallet, transferts instantanés, historique
+                des transactions et authentification sécurisée.
+              </p>
+              <ul class="tags">
+                <li>Flutter</li><li>Dart</li><li>Firebase</li><li>Stripe</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Projet 3 -->
+          <article class="project" data-category="web" data-reveal style="--reveal-delay:180ms">
+            <div class="project__media">
+              <img src="assets/project-devboard.svg" alt="Aperçu de l'interface DevBoard, tableau kanban" width="800" height="600" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <a href="#" class="btn btn--sm btn--primary" data-placeholder>Voir le site</a>
+                <a href="#" class="icon-btn" aria-label="Code source de DevBoard" data-placeholder>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3 class="project__title">DevBoard</h3>
+                <span class="project__year">2025</span>
+              </div>
+              <p class="project__desc">
+                Gestion de projets en mode kanban : collaboration en temps réel, rôles et
+                permissions, notifications et suivi de l'activité.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>Node.js</li><li>Socket.io</li><li>MongoDB</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Projet 4 -->
+          <article class="project" data-category="mobile" data-reveal>
+            <div class="project__media">
+              <img src="assets/project-pulse.svg" alt="Aperçu de l'application Pulse sur mobile" width="800" height="600" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <a href="#" class="btn btn--sm btn--primary" data-placeholder>Voir l'app</a>
+                <a href="#" class="icon-btn" aria-label="Code source de Pulse" data-placeholder>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3 class="project__title">Pulse</h3>
+                <span class="project__year">2024</span>
+              </div>
+              <p class="project__desc">
+                Réseau social mobile : fil d'actualité, stories, messagerie temps réel et
+                notifications push.
+              </p>
+              <ul class="tags">
+                <li>React Native</li><li>Node.js</li><li>Socket.io</li><li>Firebase</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Projet 5 -->
+          <article class="project" data-category="web" data-reveal style="--reveal-delay:90ms">
+            <div class="project__media">
+              <img src="assets/project-insight.svg" alt="Aperçu du tableau de bord Insight" width="800" height="600" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <a href="#" class="btn btn--sm btn--primary" data-placeholder>Voir le site</a>
+                <a href="#" class="icon-btn" aria-label="Code source de Insight" data-placeholder>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3 class="project__title">Insight</h3>
+                <span class="project__year">2024</span>
+              </div>
+              <p class="project__desc">
+                Tableau de bord analytique : visualisation de données, exports, reporting
+                automatisé et gestion multi-utilisateurs.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>Express</li><li>Chart.js</li><li>PostgreSQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Projet 6 -->
+          <article class="project" data-category="mobile" data-reveal style="--reveal-delay:180ms">
+            <div class="project__media">
+              <img src="assets/project-kwikdelivery.svg" alt="Aperçu de l'application KwikDelivery sur mobile" width="800" height="600" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <a href="#" class="btn btn--sm btn--primary" data-placeholder>Voir l'app</a>
+                <a href="#" class="icon-btn" aria-label="Code source de KwikDelivery" data-placeholder>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18-6-6 6-6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <h3 class="project__title">KwikDelivery</h3>
+                <span class="project__year">2024</span>
+              </div>
+              <p class="project__desc">
+                Application de livraison : suivi de commande en temps réel, géolocalisation
+                des livreurs et espace dédié aux partenaires.
+              </p>
+              <ul class="tags">
+                <li>Flutter</li><li>Google Maps</li><li>Firebase</li><li>Node.js</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="projects__note" data-reveal>
+          Ces projets présentent une sélection de réalisations. Le code de certains projets est
+          privé — <a href="#contact">contactez-moi</a> pour une démonstration.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PARCOURS ================= -->
+    <section class="section section--alt" id="parcours">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow"><span></span>Parcours</p>
+          <h2 class="section__title">Mon <span class="text-gradient">expérience</span></h2>
+        </div>
+
+        <div class="parcours">
+          <ol class="timeline">
+            <li class="timeline__item" data-reveal>
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <span class="timeline__date">2023 — Aujourd'hui</span>
+                <h3>Développeur Full-Stack &amp; Mobile — Freelance</h3>
+                <p class="timeline__place">Brazzaville, Congo · À distance</p>
+                <p>
+                  Conception et développement d'applications web et mobiles pour des clients en
+                  Afrique et en Europe : e-commerce, fintech, outils métiers. De la maquette au
+                  déploiement, en passant par la maintenance.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay:90ms">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <span class="timeline__date">2021 — 2023</span>
+                <h3>Développeur MEARN — Agence digitale</h3>
+                <p class="timeline__place">Équipe produit · Full-time</p>
+                <p>
+                  Développement de plateformes SaaS et e-commerce avec MongoDB, Express,
+                  Angular/React et Node.js. Mise en place d'API REST, intégration de paiements
+                  et optimisation des performances.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay:180ms">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <span class="timeline__date">2019 — 2021</span>
+                <h3>Développeur Mobile — Startup</h3>
+                <p class="timeline__place">Applications iOS &amp; Android</p>
+                <p>
+                  Développement d'applications Flutter et React Native, publication sur les
+                  stores, intégration Firebase et collaboration étroite avec les équipes design
+                  et produit.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay:270ms">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__card">
+                <span class="timeline__date">2018 — 2019</span>
+                <h3>Formation en développement web &amp; mobile</h3>
+                <p class="timeline__place">Autodidacte &amp; formations en ligne</p>
+                <p>
+                  Apprentissage des fondamentaux du web, puis spécialisation JavaScript,
+                  Node.js et développement mobile multiplateforme.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <aside class="parcours__aside" data-reveal style="--reveal-delay:120ms" aria-label="En bref">
+            <div class="quote-card">
+              <span class="quote-card__mark" aria-hidden="true">&ldquo;</span>
+              <p>Un bon produit se remarque moins par son code que par la fluidité qu'il offre au quotidien.</p>
+              <cite>Ma philosophie</cite>
+            </div>
+
+            <a href="assets/CV.pdf" class="btn btn--ghost" download>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Télécharger mon CV
+            </a>
+
+            <span class="pill pill--sm">
+              <span class="pill__dot" aria-hidden="true"></span>
+              Ouvert aux nouvelles missions
+            </span>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__intro" data-reveal>
+            <p class="eyebrow"><span></span>Contact</p>
+            <h2 class="section__title">Travaillons <span class="text-gradient">ensemble</span></h2>
+            <p class="section__sub">
+              Un projet web, une application mobile ou une simple question ? Écrivez-moi,
+              je réponds généralement sous 24&nbsp;heures.
+            </p>
+
+            <ul class="contact__list">
+              <li>
+                <span class="contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>
+                  <small>E-mail</small>
+                  <a href="mailto:contact@votrenom.dev">contact@votrenom.dev</a>
+                </span>
+              </li>
+              <li>
+                <span class="contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                </span>
+                <span>
+                  <small>Localisation</small>
+                  Brazzaville, Congo · Remote
+                </span>
+              </li>
+              <li>
+                <span class="contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5.4l3.4 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <span>
+                  <small>Disponibilité</small>
+                  Ouvert aux missions freelance et CDI
+                </span>
+              </li>
+            </ul>
+
+            <div class="contact__status">
+              <span class="pill pill--sm">
+                <span class="pill__dot" aria-hidden="true"></span>
+                Actuellement disponible
+              </span>
+            </div>
+          </div>
+
+          <div class="contact__form-wrap" data-reveal style="--reveal-delay:90ms">
+            <form class="form" id="contact-form" novalidate>
+              <div class="form__row">
+                <div class="field">
+                  <label for="name">Nom complet</label>
+                  <input type="text" id="name" name="name" placeholder="Jean Dupont" autocomplete="name" required aria-describedby="name-error">
+                  <p class="field__error" id="name-error" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="email">Adresse e-mail</label>
+                  <input type="email" id="email" name="email" placeholder="jean@exemple.com" autocomplete="email" required aria-describedby="email-error">
+                  <p class="field__error" id="email-error" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="subject">Sujet <span class="field__optional">(optionnel)</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Création d'une application mobile">
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet, vos objectifs et vos délais…" required aria-describedby="message-error"></textarea>
+                <p class="field__error" id="message-error" role="alert"></p>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                <span>Envoyer le message</span>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 16-8-5.5 16-3-6.5L4 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </button>
+
+              <p class="form__note">
+                Vos informations restent confidentielles et ne sont jamais partagées.
+              </p>
+
+              <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="brand" aria-label="Retour en haut">
+          <span class="brand__mark" aria-hidden="true">&lt;/&gt;</span>
+          <span class="brand__text">Votre&nbsp;Nom</span>
+        </a>
+        <p>Développeur MEARN Stack &amp; Mobile.<br>Je transforme des idées en produits.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigation de pied de page">
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer__socials">
+        <a class="social-link" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21H9V9Z" fill="currentColor"/></svg>
+        </a>
+        <a class="social-link" href="mailto:contact@votrenom.dev" aria-label="E-mail">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Votre Nom. Tous droits réservés.</p>
+      <p>Conçu &amp; développé avec HTML, CSS et JavaScript.</p>
+    </div>
+  </footer>
+
+  <button type="button" class="to-top" id="to-top" aria-label="Remonter en haut de la page">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6m0 0-6 6m6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
